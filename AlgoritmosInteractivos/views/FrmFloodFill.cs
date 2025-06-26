@@ -13,7 +13,6 @@ namespace AlgoritmosInteractivos.views
 {
     public partial class FrmFloodFill : Form
     {
-        private BresCirHandler HandBresCir;
         private FloodFillHandler HandFloodFill;
         private static FrmFloodFill instance;
         private bool isFillMode = false;
@@ -30,7 +29,6 @@ namespace AlgoritmosInteractivos.views
         private FrmFloodFill()
         {
             InitializeComponent();
-            HandBresCir = new BresCirHandler(picCanvas);
             HandFloodFill = new FloodFillHandler(picCanvas);
             HandFloodFill.InitializeData(txtInRadius, trbVel);
         }
@@ -46,18 +44,19 @@ namespace AlgoritmosInteractivos.views
         {
             HandFloodFill.InitializeData(txtInRadius, trbVel);
             lblVelValue.Text = "3 ms";
+            isFillMode = false;
+            btnDraw.Focus();
         }
 
         private async void picCanvas_MouseClick(object sender, MouseEventArgs e)
         {
             if (!isFillMode)
             {
-                if (!HandBresCir.ReadData(txtInRadius))
+                if (!HandFloodFill.ReadData(txtInRadius))
                     return;
 
-                HandBresCir.RegisterCenter(e.Location);
-                HandBresCir.ComputeCircle();
-                await HandBresCir.DrawCircle(0);
+                HandFloodFill.RegisterCenter(e.Location);
+                HandFloodFill.DrawCircle();
                 return;
             }
 
@@ -68,13 +67,11 @@ namespace AlgoritmosInteractivos.views
         private void btnDraw_Click(object sender, EventArgs e)
         {
             isFillMode = false;
-            HandBresCir.picCanvas = HandFloodFill.picCanvas;
         }
 
         private void btnFill_Click(object sender, EventArgs e)
         {
             isFillMode = true;
-            HandFloodFill.picCanvas = HandBresCir.picCanvas;
         }
     }
 }

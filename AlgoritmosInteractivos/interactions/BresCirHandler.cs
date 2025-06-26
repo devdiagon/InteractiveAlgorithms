@@ -18,7 +18,7 @@ namespace AlgoritmosInteractivos.interactions
         private int r;
         public List<Point> points = new List<Point>();
 
-        public PictureBox picCanvas { get; set; }
+        private PictureBox picCanvas;
         private Bitmap bmp;
         private Graphics g;
 

@@ -11,11 +11,16 @@ namespace AlgoritmosInteractivos.interactions
 {
     internal class FloodFillHandler
     {
+        private BresenhamCircle Bresenham;
+
         private Point origin;
+        private Point center;
         private int r;
+        public List<Point> points = new List<Point>();
+        
         private Color targetColor;
 
-        public PictureBox picCanvas { get; set; }
+        private PictureBox picCanvas;
         private Bitmap bmp;
         private Graphics g;
 
@@ -36,7 +41,9 @@ namespace AlgoritmosInteractivos.interactions
 
         private void ResetValues()
         {
-            origin = new Point();
+            center = new Point(0,0);
+            origin = new Point(0,0);
+            points.Clear();
             g.Clear(Color.White);
             picCanvas.Invalidate();
         }
@@ -45,6 +52,29 @@ namespace AlgoritmosInteractivos.interactions
         {
             origin = new Point(p.X, p.Y);
             targetColor = bmp.GetPixel(p.X, p.Y);
+        }
+
+        public void RegisterCenter(Point p)
+        {
+            center = new Point(p.X, p.Y);
+        }
+
+        public void DrawCircle()
+        {
+            points.Clear();
+            Bresenham = new BresenhamCircle(r, center);
+            points = Bresenham.GeneratePoints();
+
+            foreach (Point p in points)
+            {
+                if (p.X >= 0 && p.X < bmp.Width && p.Y >= 0 && p.Y < bmp.Height)
+                {
+                    bmp.SetPixel(p.X, p.Y, Color.Black);
+                    picCanvas.Image = (Bitmap)bmp.Clone();
+                }
+            }
+
+            picCanvas.Image = bmp;
         }
 
         public async Task FillFigure(Color newColor, int delay)
@@ -74,6 +104,27 @@ namespace AlgoritmosInteractivos.interactions
                 stack.Push(new Point(p.X - 1, p.Y));
                 stack.Push(new Point(p.X, p.Y + 1));
                 stack.Push(new Point(p.X, p.Y - 1));
+            }
+        }
+
+        public bool ReadData(TextBox txtInputRadius)
+        {
+            try
+            {
+                r = int.Parse(txtInputRadius.Text);
+
+                if (r <= 0)
+                {
+                    MessageBox.Show("El radio no puede ser menor o igual a cero", "Mensaje de error");
+                    return false;
+                }
+
+                return true;
+            }
+            catch
+            {
+                MessageBox.Show("Radio no válido...", "Mensaje de error");
+                return false;
             }
         }
 
