@@ -185,7 +185,7 @@
             // 
             this.trbVel.Location = new System.Drawing.Point(17, 36);
             this.trbVel.Maximum = 250;
-            this.trbVel.Minimum = 50;
+            this.trbVel.Minimum = 10;
             this.trbVel.Name = "trbVel";
             this.trbVel.Size = new System.Drawing.Size(300, 56);
             this.trbVel.TabIndex = 2;

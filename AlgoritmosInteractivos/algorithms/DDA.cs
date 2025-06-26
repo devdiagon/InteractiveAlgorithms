@@ -33,27 +33,23 @@ namespace AlgoritmosInteractivos.algorithms
             int dx = pEnd.X - pIni.X;
             int dy = pEnd.Y - pIni.Y;
 
+            if (dx == 0)
+            {
+                int step = Math.Sign(dy);
+                int y = pIni.Y;
+                for (int i = 0; i <= Math.Abs(dy); i++)
+                {
+                    points.Add(new Point(pIni.X, y));
+                    y += step;
+                }
+                return points;
+            }
+
             m = (float)dy / dx;
             k = Math.Max(Math.Abs(dx), Math.Abs(dy));
 
-            float xStep = 1;
-            float yStep = 1;
-
-            if (dx == 0)
-            {
-                xStep = 0;
-                yStep = Math.Sign(dy);
-            }
-
-            if (m > 1)
-            {
-                xStep = 1 / m;
-            }
-
-            if (m < 1)
-            {
-                yStep = m;
-            }
+            float xStep = dx / k;
+            float yStep = dy / k;
 
             float xPrev = pIni.X;
             float yPrev = pIni.Y;
