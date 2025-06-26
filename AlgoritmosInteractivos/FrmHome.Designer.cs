@@ -146,6 +146,7 @@
             this.sutherlandHodgmanToolStripMenuItem.Name = "sutherlandHodgmanToolStripMenuItem";
             this.sutherlandHodgmanToolStripMenuItem.Size = new System.Drawing.Size(286, 32);
             this.sutherlandHodgmanToolStripMenuItem.Text = "Sutherland Hodgman";
+            this.sutherlandHodgmanToolStripMenuItem.Click += new System.EventHandler(this.sutherlandHodgmanToolStripMenuItem_Click);
             // 
             // curvasParametricasToolStripMenuItem
             // 

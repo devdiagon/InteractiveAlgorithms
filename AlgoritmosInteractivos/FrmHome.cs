@@ -59,5 +59,11 @@ namespace AlgoritmosInteractivos
             FrmCohen frmCohen = FrmCohen.GetInstance();
             placeForm(frmCohen);
         }
+
+        private void sutherlandHodgmanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSuther frmSuther = FrmSuther.GetInstance();
+            placeForm(frmSuther);
+        }
     }
 }

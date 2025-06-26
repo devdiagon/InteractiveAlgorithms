@@ -1,6 +1,6 @@
 ﻿namespace AlgoritmosInteractivos.views
 {
-    partial class FrmCohen
+    partial class FrmSuther
     {
         /// <summary>
         /// Required designer variable.
@@ -44,10 +44,14 @@
             this.grbVel = new System.Windows.Forms.GroupBox();
             this.btnCalculate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblSetPoints = new System.Windows.Forms.Label();
+            this.txtPolPoints = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
             this.grbSourceTitle.SuspendLayout();
             this.grbEndTitle.SuspendLayout();
             this.grbVel.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // picCanvas
@@ -64,11 +68,11 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(74, 9);
+            this.lblTitle.Location = new System.Drawing.Point(50, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(219, 32);
+            this.lblTitle.Size = new System.Drawing.Size(279, 32);
             this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "Recorte Lineas";
+            this.lblTitle.Text = "Recorte Polinomios";
             // 
             // grbSourceTitle
             // 
@@ -182,7 +186,7 @@
             this.grbVel.Controls.Add(this.btnCalculate);
             this.grbVel.Controls.Add(this.btnReset);
             this.grbVel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbVel.Location = new System.Drawing.Point(12, 203);
+            this.grbVel.Location = new System.Drawing.Point(12, 297);
             this.grbVel.Name = "grbVel";
             this.grbVel.Size = new System.Drawing.Size(335, 76);
             this.grbVel.TabIndex = 5;
@@ -203,33 +207,68 @@
             // groupBox1
             // 
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 311);
+            this.groupBox1.Location = new System.Drawing.Point(12, 399);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(335, 233);
+            this.groupBox1.Size = new System.Drawing.Size(335, 145);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Instrucciones";
             // 
-            // FrmCohen
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lblSetPoints);
+            this.groupBox2.Controls.Add(this.txtPolPoints);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(12, 215);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(335, 76);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Total de Puntos";
+            // 
+            // lblSetPoints
+            // 
+            this.lblSetPoints.AutoSize = true;
+            this.lblSetPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSetPoints.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblSetPoints.Location = new System.Drawing.Point(258, 31);
+            this.lblSetPoints.Name = "lblSetPoints";
+            this.lblSetPoints.Size = new System.Drawing.Size(24, 25);
+            this.lblSetPoints.TabIndex = 5;
+            this.lblSetPoints.Text = "0";
+            // 
+            // txtPolPoints
+            // 
+            this.txtPolPoints.Location = new System.Drawing.Point(16, 29);
+            this.txtPolPoints.Name = "txtPolPoints";
+            this.txtPolPoints.Size = new System.Drawing.Size(146, 27);
+            this.txtPolPoints.TabIndex = 4;
+            this.txtPolPoints.TextChanged += new System.EventHandler(this.txtPolPoints_TextChanged);
+            this.txtPolPoints.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPolPoints_KeyPress);
+            // 
+            // FrmSuther
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1084, 556);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grbVel);
             this.Controls.Add(this.grbEndTitle);
             this.Controls.Add(this.grbSourceTitle);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.picCanvas);
-            this.Name = "FrmCohen";
-            this.Text = "FrmCohen";
+            this.Name = "FrmSuther";
+            this.Text = "FrmSuther";
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
             this.grbSourceTitle.ResumeLayout(false);
             this.grbSourceTitle.PerformLayout();
             this.grbEndTitle.ResumeLayout(false);
             this.grbEndTitle.PerformLayout();
             this.grbVel.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,5 +292,8 @@
         private System.Windows.Forms.GroupBox grbVel;
         private System.Windows.Forms.Button btnCalculate;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblSetPoints;
+        private System.Windows.Forms.TextBox txtPolPoints;
     }
 }
