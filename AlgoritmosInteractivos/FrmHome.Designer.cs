@@ -121,7 +121,7 @@
             // floodFillToolStripMenuItem
             // 
             this.floodFillToolStripMenuItem.Name = "floodFillToolStripMenuItem";
-            this.floodFillToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.floodFillToolStripMenuItem.Size = new System.Drawing.Size(179, 32);
             this.floodFillToolStripMenuItem.Text = "Flood Fill";
             this.floodFillToolStripMenuItem.Click += new System.EventHandler(this.floodFillToolStripMenuItem_Click);
             // 
@@ -139,6 +139,7 @@
             this.cohenSutherlandToolStripMenuItem.Name = "cohenSutherlandToolStripMenuItem";
             this.cohenSutherlandToolStripMenuItem.Size = new System.Drawing.Size(286, 32);
             this.cohenSutherlandToolStripMenuItem.Text = "Cohen Sutherland";
+            this.cohenSutherlandToolStripMenuItem.Click += new System.EventHandler(this.cohenSutherlandToolStripMenuItem_Click);
             // 
             // sutherlandHodgmanToolStripMenuItem
             // 

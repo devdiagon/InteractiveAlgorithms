@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="algorithms\BresenhamCircle.cs" />
     <Compile Include="algorithms\BresenhamLine.cs" />
+    <Compile Include="algorithms\CohenSutherland.cs" />
     <Compile Include="algorithms\DDA.cs" />
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
@@ -57,6 +58,7 @@
     </Compile>
     <Compile Include="interactions\BresCirHandler.cs" />
     <Compile Include="interactions\BresHandler.cs" />
+    <Compile Include="interactions\CohenHandler.cs" />
     <Compile Include="interactions\DDAHandler.cs" />
     <Compile Include="interactions\FloodFillHandler.cs" />
     <Compile Include="Program.cs" />
@@ -72,6 +74,12 @@
     </Compile>
     <Compile Include="views\FrmBresCir.Designer.cs">
       <DependentUpon>FrmBresCir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmCohen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmCohen.Designer.cs">
+      <DependentUpon>FrmCohen.cs</DependentUpon>
     </Compile>
     <Compile Include="views\FrmDDA.cs">
       <SubType>Form</SubType>
@@ -102,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmBresCir.resx">
       <DependentUpon>FrmBresCir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmCohen.resx">
+      <DependentUpon>FrmCohen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmDDA.resx">
       <DependentUpon>FrmDDA.cs</DependentUpon>

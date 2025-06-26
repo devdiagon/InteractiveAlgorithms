@@ -53,5 +53,11 @@ namespace AlgoritmosInteractivos
             FrmFloodFill frmFloodFill = FrmFloodFill.GetInstance();
             placeForm(frmFloodFill);
         }
+
+        private void cohenSutherlandToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCohen frmCohen = FrmCohen.GetInstance();
+            placeForm(frmCohen);
+        }
     }
 }
