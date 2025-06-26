@@ -109,6 +109,7 @@
             this.bresenhamElipseToolStripMenuItem.Name = "bresenhamElipseToolStripMenuItem";
             this.bresenhamElipseToolStripMenuItem.Size = new System.Drawing.Size(259, 32);
             this.bresenhamElipseToolStripMenuItem.Text = "Bresenham Elipse";
+            this.bresenhamElipseToolStripMenuItem.Click += new System.EventHandler(this.bresenhamElipseToolStripMenuItem_Click);
             // 
             // hjghjToolStripMenuItem
             // 

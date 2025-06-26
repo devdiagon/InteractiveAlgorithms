@@ -15,7 +15,7 @@ namespace AlgoritmosInteractivos.interactions
         private int r;
         private Color targetColor;
 
-        private PictureBox picCanvas;
+        public PictureBox picCanvas { get; set; }
         private Bitmap bmp;
         private Graphics g;
 
@@ -67,7 +67,7 @@ namespace AlgoritmosInteractivos.interactions
 
                 bmp.SetPixel(p.X, p.Y, newColor);
 
-                picCanvas.Invalidate();
+                picCanvas.Image = (Bitmap)bmp.Clone();
                 await Task.Delay(delay);
 
                 stack.Push(new Point(p.X + 1, p.Y));

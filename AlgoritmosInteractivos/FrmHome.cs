@@ -65,5 +65,11 @@ namespace AlgoritmosInteractivos
             FrmSuther frmSuther = FrmSuther.GetInstance();
             placeForm(frmSuther);
         }
+
+        private void bresenhamElipseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBresEl frmBresEl = FrmBresEl.GetInstance();
+            placeForm(frmBresEl);
+        }
     }
 }

@@ -68,11 +68,13 @@ namespace AlgoritmosInteractivos.views
         private void btnDraw_Click(object sender, EventArgs e)
         {
             isFillMode = false;
+            HandBresCir.picCanvas = HandFloodFill.picCanvas;
         }
 
         private void btnFill_Click(object sender, EventArgs e)
         {
             isFillMode = true;
+            HandFloodFill.picCanvas = HandBresCir.picCanvas;
         }
     }
 }

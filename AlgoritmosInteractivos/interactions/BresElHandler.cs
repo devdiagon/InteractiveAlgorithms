@@ -3,26 +3,26 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AlgoritmosInteractivos.interactions
 {
-    internal class BresCirHandler
+    internal class BresElHandler
     {
-        private BresenhamCircle Bresenham;
+        private BresenhamEllipse Bresenham;
 
         private Point center;
-        private int r;
+        private int a;
+        private int b;
         public List<Point> points = new List<Point>();
 
         public PictureBox picCanvas { get; set; }
         private Bitmap bmp;
         private Graphics g;
 
-        public BresCirHandler(PictureBox picCanvas)
+        public BresElHandler(PictureBox picCanvas)
         {
             this.picCanvas = picCanvas;
             InitializeDrawingSurface();
@@ -52,7 +52,7 @@ namespace AlgoritmosInteractivos.interactions
 
         public void ComputeCircle()
         {
-            Bresenham = new BresenhamCircle(r, center);
+            Bresenham = new BresenhamEllipse(a, b, center);
             points = Bresenham.GeneratePoints();
         }
 
@@ -71,15 +71,16 @@ namespace AlgoritmosInteractivos.interactions
             picCanvas.Image = bmp;
         }
 
-        public bool ReadData(TextBox txtInputRadius)
+        public bool ReadData(TextBox txtInputA, TextBox txtInputB)
         {
             try
             {
-                r = int.Parse(txtInputRadius.Text);
+                a = int.Parse(txtInputA.Text);
+                b = int.Parse(txtInputB.Text);
 
-                if (r <= 0)
+                if (a <= 0 || b <= 0)
                 {
-                    MessageBox.Show("El radio no puede ser menor o igual a cero", "Mensaje de error");
+                    MessageBox.Show("Los ejes a y b no pueden ser menor o igual a cero", "Mensaje de error");
                     return false;
                 }
 
@@ -87,21 +88,23 @@ namespace AlgoritmosInteractivos.interactions
             }
             catch
             {
-                MessageBox.Show("Radio no válido...", "Mensaje de error");
+                MessageBox.Show("Ejes a o b no válidos...", "Mensaje de error");
                 return false;
             }
         }
 
         public void InitializeData(
-            TextBox txtInputRadius,
+            TextBox txtInputA, TextBox txtInputB,
             TrackBar trbVel)
         {
             ResetValues();
 
-            txtInputRadius.Text = "";
+            txtInputA.Text = "";
+            txtInputB.Text = "";
+
             trbVel.Value = 3;
 
-            txtInputRadius.Focus();
+            txtInputA.Focus();
         }
     }
 }
