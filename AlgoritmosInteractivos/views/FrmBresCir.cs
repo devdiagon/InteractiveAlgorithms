@@ -16,7 +16,6 @@ namespace AlgoritmosInteractivos.views
     {
         private BresCirHandler HandBresCir;
         private static FrmBresCir instance;
-        private int r;
 
         public static FrmBresCir GetInstance()
         {

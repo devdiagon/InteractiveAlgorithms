@@ -121,8 +121,9 @@
             // floodFillToolStripMenuItem
             // 
             this.floodFillToolStripMenuItem.Name = "floodFillToolStripMenuItem";
-            this.floodFillToolStripMenuItem.Size = new System.Drawing.Size(179, 32);
+            this.floodFillToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.floodFillToolStripMenuItem.Text = "Flood Fill";
+            this.floodFillToolStripMenuItem.Click += new System.EventHandler(this.floodFillToolStripMenuItem_Click);
             // 
             // recorteToolStripMenuItem
             // 

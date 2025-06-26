@@ -47,5 +47,11 @@ namespace AlgoritmosInteractivos
             FrmBresCir frmBresCir = FrmBresCir.GetInstance();
             placeForm(frmBresCir);
         }
+
+        private void floodFillToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFloodFill frmFloodFill = FrmFloodFill.GetInstance();
+            placeForm(frmFloodFill);
+        }
     }
 }

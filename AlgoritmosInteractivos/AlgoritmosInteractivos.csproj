@@ -58,6 +58,7 @@
     <Compile Include="interactions\BresCirHandler.cs" />
     <Compile Include="interactions\BresHandler.cs" />
     <Compile Include="interactions\DDAHandler.cs" />
+    <Compile Include="interactions\FloodFillHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="views\FrmBres.cs">
@@ -77,6 +78,12 @@
     </Compile>
     <Compile Include="views\FrmDDA.Designer.cs">
       <DependentUpon>FrmDDA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmFloodFill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmFloodFill.Designer.cs">
+      <DependentUpon>FrmFloodFill.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmHome.resx">
       <DependentUpon>FrmHome.cs</DependentUpon>
@@ -98,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmDDA.resx">
       <DependentUpon>FrmDDA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmFloodFill.resx">
+      <DependentUpon>FrmFloodFill.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
