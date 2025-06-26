@@ -31,6 +31,8 @@
             this.picCanvas = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.grbSourceTitle = new System.Windows.Forms.GroupBox();
+            this.txtInB = new System.Windows.Forms.TextBox();
+            this.lblB = new System.Windows.Forms.Label();
             this.lblA = new System.Windows.Forms.Label();
             this.txtInA = new System.Windows.Forms.TextBox();
             this.grbProcessTitle = new System.Windows.Forms.GroupBox();
@@ -41,8 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblB = new System.Windows.Forms.Label();
-            this.txtInB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
             this.grbSourceTitle.SuspendLayout();
             this.grbProcessTitle.SuspendLayout();
@@ -67,9 +67,9 @@
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(27, 26);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(272, 32);
+            this.lblTitle.Size = new System.Drawing.Size(261, 32);
             this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "Circulo Bresenham";
+            this.lblTitle.Text = "Elipse Bresenham";
             // 
             // grbSourceTitle
             // 
@@ -84,6 +84,22 @@
             this.grbSourceTitle.TabIndex = 2;
             this.grbSourceTitle.TabStop = false;
             this.grbSourceTitle.Text = "Entrada";
+            // 
+            // txtInB
+            // 
+            this.txtInB.Location = new System.Drawing.Point(81, 80);
+            this.txtInB.Name = "txtInB";
+            this.txtInB.Size = new System.Drawing.Size(137, 27);
+            this.txtInB.TabIndex = 4;
+            // 
+            // lblB
+            // 
+            this.lblB.AutoSize = true;
+            this.lblB.Location = new System.Drawing.Point(12, 80);
+            this.lblB.Name = "lblB";
+            this.lblB.Size = new System.Drawing.Size(56, 20);
+            this.lblB.TabIndex = 3;
+            this.lblB.Text = "eje b:";
             // 
             // lblA
             // 
@@ -185,22 +201,6 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Instrucciones";
-            // 
-            // lblB
-            // 
-            this.lblB.AutoSize = true;
-            this.lblB.Location = new System.Drawing.Point(12, 80);
-            this.lblB.Name = "lblB";
-            this.lblB.Size = new System.Drawing.Size(56, 20);
-            this.lblB.TabIndex = 3;
-            this.lblB.Text = "eje b:";
-            // 
-            // txtInB
-            // 
-            this.txtInB.Location = new System.Drawing.Point(81, 80);
-            this.txtInB.Name = "txtInB";
-            this.txtInB.Size = new System.Drawing.Size(137, 27);
-            this.txtInB.TabIndex = 4;
             // 
             // FrmBresEl
             // 
