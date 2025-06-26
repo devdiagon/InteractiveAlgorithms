@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36203.30 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoritmosInteractivos", "AlgoritmosInteractivos\AlgoritmosInteractivos.csproj", "{481251FA-95A5-49E0-84EE-D6676AB85FB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{481251FA-95A5-49E0-84EE-D6676AB85FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{481251FA-95A5-49E0-84EE-D6676AB85FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{481251FA-95A5-49E0-84EE-D6676AB85FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{481251FA-95A5-49E0-84EE-D6676AB85FB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B5A7352-5AF8-404E-9C56-58EC8E839EAF}
+	EndGlobalSection
+EndGlobal
