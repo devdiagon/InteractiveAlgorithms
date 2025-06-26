@@ -41,5 +41,11 @@ namespace AlgoritmosInteractivos
             FrmBres frmBres = FrmBres.GetInstance();
             placeForm(frmBres);
         }
+
+        private void bresenhamCírculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBresCir frmBresCir = FrmBresCir.GetInstance();
+            placeForm(frmBresCir);
+        }
     }
 }

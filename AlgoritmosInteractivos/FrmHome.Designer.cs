@@ -77,14 +77,14 @@
             // dDAToolStripMenuItem
             // 
             this.dDAToolStripMenuItem.Name = "dDAToolStripMenuItem";
-            this.dDAToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.dDAToolStripMenuItem.Size = new System.Drawing.Size(198, 32);
             this.dDAToolStripMenuItem.Text = "DDA";
             this.dDAToolStripMenuItem.Click += new System.EventHandler(this.dDAToolStripMenuItem_Click);
             // 
             // bresenhamToolStripMenuItem
             // 
             this.bresenhamToolStripMenuItem.Name = "bresenhamToolStripMenuItem";
-            this.bresenhamToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.bresenhamToolStripMenuItem.Size = new System.Drawing.Size(198, 32);
             this.bresenhamToolStripMenuItem.Text = "Bresenham ";
             this.bresenhamToolStripMenuItem.Click += new System.EventHandler(this.bresenhamToolStripMenuItem_Click);
             // 
@@ -102,6 +102,7 @@
             this.bresenhamCírculoToolStripMenuItem.Name = "bresenhamCírculoToolStripMenuItem";
             this.bresenhamCírculoToolStripMenuItem.Size = new System.Drawing.Size(259, 32);
             this.bresenhamCírculoToolStripMenuItem.Text = "Bresenham Circulo";
+            this.bresenhamCírculoToolStripMenuItem.Click += new System.EventHandler(this.bresenhamCírculoToolStripMenuItem_Click);
             // 
             // bresenhamElipseToolStripMenuItem
             // 
