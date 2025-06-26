@@ -35,5 +35,11 @@ namespace AlgoritmosInteractivos
             FrmDDA frmDDA = FrmDDA.GetInstance();
             placeForm(frmDDA);
         }
+
+        private void bresenhamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBres frmBres = FrmBres.GetInstance();
+            placeForm(frmBres);
+        }
     }
 }
