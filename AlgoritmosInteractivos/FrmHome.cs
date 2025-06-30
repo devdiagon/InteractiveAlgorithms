@@ -77,5 +77,11 @@ namespace AlgoritmosInteractivos
             FrmSpan frmSpan = FrmSpan.GetInstance();
             placeForm(frmSpan);
         }
+
+        private void curvasDeBezierToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmBezier frmBezier = FrmBezier.GetInstance();
+            placeForm(frmBezier);
+        }
     }
 }

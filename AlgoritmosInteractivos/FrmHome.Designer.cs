@@ -37,14 +37,13 @@
             this.bresenhamElipseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hjghjToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.floodFillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spanFillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recorteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cohenSutherlandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sutherlandHodgmanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.curvasParametricasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.curvasDeBezierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bSplinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlWrapper = new System.Windows.Forms.Panel();
-            this.spanFillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.curvasDeBezierToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.bSplinesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,10 +58,11 @@
             this.fsdgfdgToolStripMenuItem,
             this.hjghjToolStripMenuItem,
             this.recorteToolStripMenuItem,
-            this.curvasParametricasToolStripMenuItem});
+            this.curvasDeBezierToolStripMenuItem1,
+            this.bSplinesToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(205, 603);
+            this.menuStrip1.Size = new System.Drawing.Size(174, 603);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,7 +72,7 @@
             this.dDAToolStripMenuItem,
             this.bresenhamToolStripMenuItem});
             this.dgdfgToolStripMenuItem.Name = "dgdfgToolStripMenuItem";
-            this.dgdfgToolStripMenuItem.Size = new System.Drawing.Size(192, 32);
+            this.dgdfgToolStripMenuItem.Size = new System.Drawing.Size(161, 32);
             this.dgdfgToolStripMenuItem.Text = "Líneas";
             // 
             // dDAToolStripMenuItem
@@ -95,7 +95,7 @@
             this.bresenhamCírculoToolStripMenuItem,
             this.bresenhamElipseToolStripMenuItem});
             this.fsdgfdgToolStripMenuItem.Name = "fsdgfdgToolStripMenuItem";
-            this.fsdgfdgToolStripMenuItem.Size = new System.Drawing.Size(192, 32);
+            this.fsdgfdgToolStripMenuItem.Size = new System.Drawing.Size(161, 32);
             this.fsdgfdgToolStripMenuItem.Text = "Curvas";
             // 
             // bresenhamCírculoToolStripMenuItem
@@ -118,15 +118,22 @@
             this.floodFillToolStripMenuItem,
             this.spanFillToolStripMenuItem});
             this.hjghjToolStripMenuItem.Name = "hjghjToolStripMenuItem";
-            this.hjghjToolStripMenuItem.Size = new System.Drawing.Size(192, 32);
+            this.hjghjToolStripMenuItem.Size = new System.Drawing.Size(161, 32);
             this.hjghjToolStripMenuItem.Text = "Relleno";
             // 
             // floodFillToolStripMenuItem
             // 
             this.floodFillToolStripMenuItem.Name = "floodFillToolStripMenuItem";
-            this.floodFillToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.floodFillToolStripMenuItem.Size = new System.Drawing.Size(179, 32);
             this.floodFillToolStripMenuItem.Text = "Flood Fill";
             this.floodFillToolStripMenuItem.Click += new System.EventHandler(this.floodFillToolStripMenuItem_Click);
+            // 
+            // spanFillToolStripMenuItem
+            // 
+            this.spanFillToolStripMenuItem.Name = "spanFillToolStripMenuItem";
+            this.spanFillToolStripMenuItem.Size = new System.Drawing.Size(179, 32);
+            this.spanFillToolStripMenuItem.Text = "Span Fill";
+            this.spanFillToolStripMenuItem.Click += new System.EventHandler(this.spanFillToolStripMenuItem_Click);
             // 
             // recorteToolStripMenuItem
             // 
@@ -134,7 +141,7 @@
             this.cohenSutherlandToolStripMenuItem,
             this.sutherlandHodgmanToolStripMenuItem});
             this.recorteToolStripMenuItem.Name = "recorteToolStripMenuItem";
-            this.recorteToolStripMenuItem.Size = new System.Drawing.Size(192, 32);
+            this.recorteToolStripMenuItem.Size = new System.Drawing.Size(161, 32);
             this.recorteToolStripMenuItem.Text = "Recorte";
             // 
             // cohenSutherlandToolStripMenuItem
@@ -151,42 +158,27 @@
             this.sutherlandHodgmanToolStripMenuItem.Text = "Sutherland Hodgman";
             this.sutherlandHodgmanToolStripMenuItem.Click += new System.EventHandler(this.sutherlandHodgmanToolStripMenuItem_Click);
             // 
-            // curvasParametricasToolStripMenuItem
-            // 
-            this.curvasParametricasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.curvasDeBezierToolStripMenuItem,
-            this.bSplinesToolStripMenuItem});
-            this.curvasParametricasToolStripMenuItem.Name = "curvasParametricasToolStripMenuItem";
-            this.curvasParametricasToolStripMenuItem.Size = new System.Drawing.Size(192, 32);
-            this.curvasParametricasToolStripMenuItem.Text = "Curvas Parametricas";
-            // 
-            // curvasDeBezierToolStripMenuItem
-            // 
-            this.curvasDeBezierToolStripMenuItem.Name = "curvasDeBezierToolStripMenuItem";
-            this.curvasDeBezierToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
-            this.curvasDeBezierToolStripMenuItem.Text = "Curvas de Bezier";
-            // 
-            // bSplinesToolStripMenuItem
-            // 
-            this.bSplinesToolStripMenuItem.Name = "bSplinesToolStripMenuItem";
-            this.bSplinesToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
-            this.bSplinesToolStripMenuItem.Text = "B Splines";
-            // 
             // pnlWrapper
             // 
             this.pnlWrapper.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pnlWrapper.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlWrapper.Location = new System.Drawing.Point(205, 0);
+            this.pnlWrapper.Location = new System.Drawing.Point(174, 0);
             this.pnlWrapper.Name = "pnlWrapper";
-            this.pnlWrapper.Size = new System.Drawing.Size(1102, 603);
+            this.pnlWrapper.Size = new System.Drawing.Size(1133, 603);
             this.pnlWrapper.TabIndex = 1;
             // 
-            // spanFillToolStripMenuItem
+            // curvasDeBezierToolStripMenuItem1
             // 
-            this.spanFillToolStripMenuItem.Name = "spanFillToolStripMenuItem";
-            this.spanFillToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
-            this.spanFillToolStripMenuItem.Text = "Span Fill";
-            this.spanFillToolStripMenuItem.Click += new System.EventHandler(this.spanFillToolStripMenuItem_Click);
+            this.curvasDeBezierToolStripMenuItem1.Name = "curvasDeBezierToolStripMenuItem1";
+            this.curvasDeBezierToolStripMenuItem1.Size = new System.Drawing.Size(161, 32);
+            this.curvasDeBezierToolStripMenuItem1.Text = "Curvas de Bezier";
+            this.curvasDeBezierToolStripMenuItem1.Click += new System.EventHandler(this.curvasDeBezierToolStripMenuItem1_Click);
+            // 
+            // bSplinesToolStripMenuItem1
+            // 
+            this.bSplinesToolStripMenuItem1.Name = "bSplinesToolStripMenuItem1";
+            this.bSplinesToolStripMenuItem1.Size = new System.Drawing.Size(161, 32);
+            this.bSplinesToolStripMenuItem1.Text = "B Splines";
             // 
             // FrmHome
             // 
@@ -211,7 +203,6 @@
         private System.Windows.Forms.ToolStripMenuItem fsdgfdgToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hjghjToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recorteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem curvasParametricasToolStripMenuItem;
         private System.Windows.Forms.Panel pnlWrapper;
         private System.Windows.Forms.ToolStripMenuItem dDAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bresenhamToolStripMenuItem;
@@ -220,8 +211,8 @@
         private System.Windows.Forms.ToolStripMenuItem floodFillToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cohenSutherlandToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sutherlandHodgmanToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem curvasDeBezierToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bSplinesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem spanFillToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem curvasDeBezierToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem bSplinesToolStripMenuItem1;
     }
 }

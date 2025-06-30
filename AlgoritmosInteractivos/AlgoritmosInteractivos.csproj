@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="algorithms\Bezier.cs" />
     <Compile Include="algorithms\BresenhamCircle.cs" />
     <Compile Include="algorithms\BresenhamEllipse.cs" />
     <Compile Include="algorithms\BresenhamLine.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="FrmHome.Designer.cs">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="interactions\BezierHandler.cs" />
     <Compile Include="interactions\BresCirHandler.cs" />
     <Compile Include="interactions\BresElHandler.cs" />
     <Compile Include="interactions\BresHandler.cs" />
@@ -67,6 +69,12 @@
     <Compile Include="interactions\SutherHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="views\FrmBezier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmBezier.Designer.cs">
+      <DependentUpon>FrmBezier.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FrmBres.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +135,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="views\FrmBezier.resx">
+      <DependentUpon>FrmBezier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\FrmBres.resx">
       <DependentUpon>FrmBres.cs</DependentUpon>
     </EmbeddedResource>
