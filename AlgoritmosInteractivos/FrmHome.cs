@@ -71,5 +71,11 @@ namespace AlgoritmosInteractivos
             FrmBresEl frmBresEl = FrmBresEl.GetInstance();
             placeForm(frmBresEl);
         }
+
+        private void spanFillToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSpan frmSpan = FrmSpan.GetInstance();
+            placeForm(frmSpan);
+        }
     }
 }

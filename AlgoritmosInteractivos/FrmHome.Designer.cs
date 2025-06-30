@@ -44,6 +44,7 @@
             this.curvasDeBezierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bSplinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlWrapper = new System.Windows.Forms.Panel();
+            this.spanFillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,7 +115,8 @@
             // hjghjToolStripMenuItem
             // 
             this.hjghjToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.floodFillToolStripMenuItem});
+            this.floodFillToolStripMenuItem,
+            this.spanFillToolStripMenuItem});
             this.hjghjToolStripMenuItem.Name = "hjghjToolStripMenuItem";
             this.hjghjToolStripMenuItem.Size = new System.Drawing.Size(192, 32);
             this.hjghjToolStripMenuItem.Text = "Relleno";
@@ -122,7 +124,7 @@
             // floodFillToolStripMenuItem
             // 
             this.floodFillToolStripMenuItem.Name = "floodFillToolStripMenuItem";
-            this.floodFillToolStripMenuItem.Size = new System.Drawing.Size(179, 32);
+            this.floodFillToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.floodFillToolStripMenuItem.Text = "Flood Fill";
             this.floodFillToolStripMenuItem.Click += new System.EventHandler(this.floodFillToolStripMenuItem_Click);
             // 
@@ -179,6 +181,13 @@
             this.pnlWrapper.Size = new System.Drawing.Size(1102, 603);
             this.pnlWrapper.TabIndex = 1;
             // 
+            // spanFillToolStripMenuItem
+            // 
+            this.spanFillToolStripMenuItem.Name = "spanFillToolStripMenuItem";
+            this.spanFillToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.spanFillToolStripMenuItem.Text = "Span Fill";
+            this.spanFillToolStripMenuItem.Click += new System.EventHandler(this.spanFillToolStripMenuItem_Click);
+            // 
             // FrmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -213,5 +222,6 @@
         private System.Windows.Forms.ToolStripMenuItem sutherlandHodgmanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem curvasDeBezierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bSplinesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spanFillToolStripMenuItem;
     }
 }

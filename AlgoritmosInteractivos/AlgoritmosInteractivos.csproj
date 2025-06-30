@@ -63,6 +63,7 @@
     <Compile Include="interactions\CohenHandler.cs" />
     <Compile Include="interactions\DDAHandler.cs" />
     <Compile Include="interactions\FloodFillHandler.cs" />
+    <Compile Include="interactions\SpanFillHandler.cs" />
     <Compile Include="interactions\SutherHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,6 +103,12 @@
     <Compile Include="views\FrmFloodFill.Designer.cs">
       <DependentUpon>FrmFloodFill.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\FrmSpan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmSpan.Designer.cs">
+      <DependentUpon>FrmSpan.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FrmSuther.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmFloodFill.resx">
       <DependentUpon>FrmFloodFill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmSpan.resx">
+      <DependentUpon>FrmSpan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmSuther.resx">
       <DependentUpon>FrmSuther.cs</DependentUpon>
