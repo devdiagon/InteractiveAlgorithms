@@ -62,6 +62,7 @@
     <Compile Include="interactions\BresCirHandler.cs" />
     <Compile Include="interactions\BresElHandler.cs" />
     <Compile Include="interactions\BresHandler.cs" />
+    <Compile Include="interactions\BSplineHandler.cs" />
     <Compile Include="interactions\CohenHandler.cs" />
     <Compile Include="interactions\DDAHandler.cs" />
     <Compile Include="interactions\FloodFillHandler.cs" />
@@ -117,6 +118,12 @@
     <Compile Include="views\FrmSpan.Designer.cs">
       <DependentUpon>FrmSpan.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\FrmSplines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmSplines.Designer.cs">
+      <DependentUpon>FrmSplines.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FrmSuther.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmSpan.resx">
       <DependentUpon>FrmSpan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmSplines.resx">
+      <DependentUpon>FrmSplines.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmSuther.resx">
       <DependentUpon>FrmSuther.cs</DependentUpon>

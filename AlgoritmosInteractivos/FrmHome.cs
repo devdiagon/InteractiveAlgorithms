@@ -83,5 +83,11 @@ namespace AlgoritmosInteractivos
             FrmBezier frmBezier = FrmBezier.GetInstance();
             placeForm(frmBezier);
         }
+
+        private void bSplinesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmSplines frmSplines = FrmSplines.GetInstance();
+            placeForm(frmSplines);
+        }
     }
 }

@@ -41,9 +41,9 @@
             this.recorteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cohenSutherlandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sutherlandHodgmanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlWrapper = new System.Windows.Forms.Panel();
             this.curvasDeBezierToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.bSplinesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlWrapper = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,15 +158,6 @@
             this.sutherlandHodgmanToolStripMenuItem.Text = "Sutherland Hodgman";
             this.sutherlandHodgmanToolStripMenuItem.Click += new System.EventHandler(this.sutherlandHodgmanToolStripMenuItem_Click);
             // 
-            // pnlWrapper
-            // 
-            this.pnlWrapper.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pnlWrapper.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlWrapper.Location = new System.Drawing.Point(174, 0);
-            this.pnlWrapper.Name = "pnlWrapper";
-            this.pnlWrapper.Size = new System.Drawing.Size(1133, 603);
-            this.pnlWrapper.TabIndex = 1;
-            // 
             // curvasDeBezierToolStripMenuItem1
             // 
             this.curvasDeBezierToolStripMenuItem1.Name = "curvasDeBezierToolStripMenuItem1";
@@ -179,6 +170,16 @@
             this.bSplinesToolStripMenuItem1.Name = "bSplinesToolStripMenuItem1";
             this.bSplinesToolStripMenuItem1.Size = new System.Drawing.Size(161, 32);
             this.bSplinesToolStripMenuItem1.Text = "B Splines";
+            this.bSplinesToolStripMenuItem1.Click += new System.EventHandler(this.bSplinesToolStripMenuItem1_Click);
+            // 
+            // pnlWrapper
+            // 
+            this.pnlWrapper.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlWrapper.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlWrapper.Location = new System.Drawing.Point(174, 0);
+            this.pnlWrapper.Name = "pnlWrapper";
+            this.pnlWrapper.Size = new System.Drawing.Size(1133, 603);
+            this.pnlWrapper.TabIndex = 1;
             // 
             // FrmHome
             // 
