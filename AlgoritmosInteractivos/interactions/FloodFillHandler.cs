@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -77,16 +78,18 @@ namespace AlgoritmosInteractivos.interactions
             picCanvas.Image = bmp;
         }
 
-        public async Task FillFigure(Color newColor, int delay)
+        public async Task FillFigure(Color newColor, int delay, CancellationToken token)
         {
             if (origin.X < 0 || origin.Y < 0 || origin.X >= bmp.Width || origin.Y >= bmp.Height)
                 return;
 
             Stack<Point> stack = new Stack<Point>();
-            stack.Push(origin);
+            stack.Push(new Point(origin.X, origin.Y));
 
             while (stack.Count > 0)
             {
+                token.ThrowIfCancellationRequested();
+
                 Point p = stack.Pop();
 
                 if (p.X < 0 || p.Y < 0 || p.X >= bmp.Width || p.Y >= bmp.Height)
@@ -97,12 +100,12 @@ namespace AlgoritmosInteractivos.interactions
 
                 bmp.SetPixel(p.X, p.Y, newColor);
 
-                picCanvas.Image = (Bitmap)bmp.Clone();
+                picCanvas.Invalidate(new Rectangle(p.X, p.Y, 1, 1));
                 await Task.Delay(delay);
 
                 stack.Push(new Point(p.X + 1, p.Y));
-                stack.Push(new Point(p.X - 1, p.Y));
                 stack.Push(new Point(p.X, p.Y + 1));
+                stack.Push(new Point(p.X - 1, p.Y));
                 stack.Push(new Point(p.X, p.Y - 1));
             }
         }

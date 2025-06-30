@@ -17,7 +17,6 @@ namespace AlgoritmosInteractivos.views
         private SpanFillHandler HandSpanFill;
         private static FrmSpan instance;
         private bool isFillMode = false;
-        private int r;
         private List<CancellationTokenSource> activeFills = new List<CancellationTokenSource>();
 
         public static FrmSpan GetInstance()

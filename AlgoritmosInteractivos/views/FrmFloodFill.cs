@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,7 +17,7 @@ namespace AlgoritmosInteractivos.views
         private FloodFillHandler HandFloodFill;
         private static FrmFloodFill instance;
         private bool isFillMode = false;
-        private int r;
+        private List<CancellationTokenSource> activeFills = new List<CancellationTokenSource>();
 
         public static FrmFloodFill GetInstance()
         {
@@ -42,6 +43,10 @@ namespace AlgoritmosInteractivos.views
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            foreach (var cts in activeFills)
+                cts.Cancel();
+            activeFills.Clear();
+
             HandFloodFill.InitializeData(txtInRadius, trbVel);
             lblVelValue.Text = "3 ms";
             isFillMode = false;
@@ -60,8 +65,19 @@ namespace AlgoritmosInteractivos.views
                 return;
             }
 
-            HandFloodFill.RegisterOrigin(e.Location);
-            await HandFloodFill.FillFigure(Color.Green, trbVel.Value);
+            var cts = new CancellationTokenSource();
+            activeFills.Add(cts);
+
+            try
+            {
+                HandFloodFill.RegisterOrigin(e.Location);
+                await HandFloodFill.FillFigure(Color.Green, trbVel.Value, cts.Token);
+            }
+            catch (OperationCanceledException) { }
+            finally
+            {
+                activeFills.Remove(cts);
+            }
         }
 
         private void btnDraw_Click(object sender, EventArgs e)
