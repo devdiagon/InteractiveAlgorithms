@@ -68,7 +68,6 @@ namespace AlgoritmosInteractivos.interactions
             return left + right;
         }
 
-        // Genera puntos muestreados en la curva B-Spline
         public List<PointF> GenerarCurva(int numPoints = 100)
         {
             List<PointF> curva = new List<PointF>();
@@ -89,6 +88,40 @@ namespace AlgoritmosInteractivos.interactions
                 }
 
                 curva.Add(punto);
+            }
+
+            return curva;
+        }
+
+        public List<(PointF punto, int indiceDominante)> GenerarCurvaConInfluencia(int numPuntos = 100)
+        {
+            List<(PointF, int)> curva = new List<(PointF, int)>();
+
+            float tInicio = nudos[grado];
+            float tFin = nudos[nudos.Count - grado - 1];
+
+            for (int i = 0; i < numPuntos; i++)
+            {
+                float t = tInicio + (tFin - tInicio) * i / (numPuntos - 1);
+
+                PointF punto = new PointF(0, 0);
+                float maxBase = -1f;
+                int indiceDominante = -1;
+
+                for (int j = 0; j < puntos.Count; j++)
+                {
+                    float b = BasisFunction(j, grado + 1, t);
+                    punto.X += b * puntos[j].X;
+                    punto.Y += b * puntos[j].Y;
+
+                    if (b > maxBase)
+                    {
+                        maxBase = b;
+                        indiceDominante = j;
+                    }
+                }
+
+                curva.Add((punto, indiceDominante));
             }
 
             return curva;

@@ -24,6 +24,8 @@ namespace AlgoritmosInteractivos.views
         private List<PointF> curva;
         private float tActual = 0f;
 
+        private List<(PointF punto, int indiceDominante)> curvaConInfluencia;
+
         public static FrmSplines GetInstance()
         {
             if (instance == null || instance.IsDisposed)
@@ -56,6 +58,7 @@ namespace AlgoritmosInteractivos.views
             };
             splineHandler = new BSplineHandler(puntosControl);
             curva = splineHandler.GenerarCurva();
+            curvaConInfluencia = splineHandler.GenerarCurvaConInfluencia();
             picCanvas.Invalidate();
         }
 
@@ -76,6 +79,9 @@ namespace AlgoritmosInteractivos.views
         {
             isDragging = false;
             draggingIndex = -1;
+            curva = splineHandler.GenerarCurva();
+            curvaConInfluencia = splineHandler.GenerarCurvaConInfluencia();
+            picCanvas.Invalidate();
         }
 
         private void picCanvas_MouseMove(object sender, MouseEventArgs e)
@@ -85,24 +91,71 @@ namespace AlgoritmosInteractivos.views
                 puntosControl[draggingIndex] = new PointF(e.X, e.Y);
                 splineHandler = new BSplineHandler(puntosControl);
                 curva = splineHandler.GenerarCurva();
+                curvaConInfluencia = splineHandler.GenerarCurvaConInfluencia();
                 picCanvas.Invalidate();
             }
         }
 
         private void picCanvas_MouseClick(object sender, MouseEventArgs e)
         {
-            
+            if (isDragging) return;
+
+            if (e.Button == MouseButtons.Left)
+            {
+                puntosControl.Add(new PointF(e.X, e.Y));
+            }
+            else if (e.Button == MouseButtons.Right)
+            {
+                if (puntosControl.Count > 3)
+                {
+                    puntosControl.RemoveAt(puntosControl.Count - 1);
+                }
+                else
+                {
+                    MessageBox.Show("Se requieren al menos 3 puntos para generar la curva.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            splineHandler = new BSplineHandler(puntosControl);
+            curva = splineHandler.GenerarCurva();
+            curvaConInfluencia = splineHandler.GenerarCurvaConInfluencia();
+
+            picCanvas.Invalidate();
         }
 
         private void picCanvas_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
 
-            if (curva.Count > 1)
+            if (curvaConInfluencia != null && curvaConInfluencia.Count > 1)
             {
-                using (Pen p = new Pen(Color.Blue, 2))
+                using (Pen penNormal = new Pen(Color.Blue, 2))
+                using (Pen penResaltado = new Pen(Color.Orange, 3))
                 {
-                    g.DrawLines(p, curva.ToArray());
+                    for (int i = 0; i < curvaConInfluencia.Count - 1; i++)
+                    {
+                        var a = curvaConInfluencia[i];
+                        var b = curvaConInfluencia[i + 1];
+
+                        // Si está siendo arrastrado este índice, resalta
+                        if (isDragging && draggingIndex != -1 &&
+                            (a.indiceDominante == draggingIndex || b.indiceDominante == draggingIndex))
+                        {
+                            g.DrawLine(penResaltado, a.punto, b.punto);
+                        }
+                        else
+                        {
+                            g.DrawLine(penNormal, a.punto, b.punto);
+                        }
+                    }
+                }
+            }
+
+            if (puntosControl != null && puntosControl.Count > 1)
+            {
+                using (Pen marcoPen = new Pen(Color.Red, 1) { DashStyle = System.Drawing.Drawing2D.DashStyle.Dash })
+                {
+                    g.DrawLines(marcoPen, puntosControl.ToArray());
                 }
             }
 
@@ -112,7 +165,7 @@ namespace AlgoritmosInteractivos.views
                 g.DrawEllipse(Pens.Black, pt.X - 5, pt.Y - 5, 10, 10);
             }
 
-            if (curva.Count > 1)
+            if (curva != null && curva.Count > 1)
             {
                 int idx = (int)(tActual * (curva.Count - 1));
                 PointF p = curva[idx];
@@ -170,6 +223,7 @@ namespace AlgoritmosInteractivos.views
             };
             splineHandler = new BSplineHandler(puntosControl);
             curva = splineHandler.GenerarCurva();
+            curvaConInfluencia = splineHandler.GenerarCurvaConInfluencia();
             picCanvas.Invalidate();
         }
     }
