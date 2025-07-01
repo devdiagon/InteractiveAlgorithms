@@ -47,10 +47,17 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblSetPoints = new System.Windows.Forms.Label();
             this.txtPolPoints = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
             this.grbSourceTitle.SuspendLayout();
             this.grbEndTitle.SuspendLayout();
             this.grbVel.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,9 +77,9 @@
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(50, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(279, 32);
+            this.lblTitle.Size = new System.Drawing.Size(264, 32);
             this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "Recorte Polinomios";
+            this.lblTitle.Text = "Recorte Polígonos";
             // 
             // grbSourceTitle
             // 
@@ -206,6 +213,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 399);
             this.groupBox1.Name = "groupBox1";
@@ -246,6 +259,66 @@
             this.txtPolPoints.TextChanged += new System.EventHandler(this.txtPolPoints_TextChanged);
             this.txtPolPoints.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPolPoints_KeyPress);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(275, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Presione 2 veces en el canvas para";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(245, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "generar el cuadro central, luego";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 63);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(258, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "especifique la cantidad de puntos";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(7, 83);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(290, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "del polígono a generar. Presione en el";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 103);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(275, 20);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "canvas nuevamente para generar el";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 123);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(165, 20);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "polígono y recortarlo.";
+            // 
             // FrmSuther
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -267,6 +340,8 @@
             this.grbEndTitle.ResumeLayout(false);
             this.grbEndTitle.PerformLayout();
             this.grbVel.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -295,5 +370,11 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblSetPoints;
         private System.Windows.Forms.TextBox txtPolPoints;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }
